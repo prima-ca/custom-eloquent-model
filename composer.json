@@ -1,5 +1,5 @@
 {
-    "name": "sfinktah/eloquent-model;",
+    "name": "prima-ca/custom-eloquent-model;",
     "type": "library",
     "description": "Customised naming conventions for Eloquent table names and primary keys.",
     "homepage": "https://github.com/tijsverkoyen/CssToInlineStyles",
