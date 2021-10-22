@@ -1,0 +1,30 @@
+{
+    "name": "sfinktah/eloquent-model;",
+    "type": "library",
+    "description": "Customised naming conventions for Eloquent table names and primary keys.",
+    "homepage": "https://github.com/tijsverkoyen/CssToInlineStyles",
+    "authors": [
+        {
+            "name": "Christopher Anderson",
+            "email": "ca@eloquent-model.spamtrak.org",
+            "role": "Developer"
+        }
+    ],
+    "keywords": [
+        "laravel",
+        "eloquent",
+        "naming",
+        "names",
+        "convention",
+        "custom"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Cyrus\\Database\\": "src/Database/"
+        }
+    }
+}
