@@ -1,5 +1,5 @@
 {
-    "name": "prima-ca/custom-eloquent-model;",
+    "name": "prima-ca/custom-eloquent-model",
     "type": "library",
     "description": "Customised naming conventions for Eloquent table names and primary keys.",
     "homepage": "https://github.com/tijsverkoyen/CssToInlineStyles",
@@ -25,6 +25,11 @@
     "autoload": {
         "psr-4": {
             "Cyrus\\Database\\": "src/Database/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": []
         }
     }
 }
