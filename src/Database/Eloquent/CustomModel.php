@@ -26,6 +26,9 @@ use LogicException;
 
 abstract class TestCustomModel extends \Illuminate\Database\Eloquent\Model
 {
+    protected $tablePrefix = 'Animal';
+    protected $primaryKey = null;
+
     /**
      * A callable to translate the classname to a database table name
      *
@@ -35,8 +38,8 @@ abstract class TestCustomModel extends \Illuminate\Database\Eloquent\Model
     protected function tableCallable($classname) {
         // Default behaviour
         // return Str::snake(Str::pluralStudly($classname));
-        if ($classname == 'Animal') return 'tblAnimal';
-        return 'tblAnimal' . self::nonPluralStudly($classname);
+        if ($classname == $this->tablePrefix) return 'tbl'.$this->tablePrefix;
+        return 'tbl'.$this->tablePrefix.self::nonPluralStudly($classname);
     }
 
     /**
@@ -59,11 +62,7 @@ abstract class TestCustomModel extends \Illuminate\Database\Eloquent\Model
      */
     public function getTable()
     {
-        if ($this->table)
-            return $this->table;
-        if ($this->tableCallable)
-            return $this->tableCallable(class_basename($this));
-        return Str::snake(Str::pluralStudly(class_basename($this)));
+        return $this->table ?? $this->tableCallable(class_basename($this));
     }
 
     /**
@@ -111,11 +110,7 @@ abstract class TestCustomModel extends \Illuminate\Database\Eloquent\Model
      */
     public static function nonPluralStudly($value, $count = 2)
     {
-        $parts = preg_split('/(.)(?=[A-Z])/u', $value, -1, PREG_SPLIT_DELIM_CAPTURE);
-
-        $lastWord = array_pop($parts);
-
-        return implode('', $parts).self::plural($lastWord, $count);
+        return Str::studly($value);
     }
 }
 
