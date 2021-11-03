@@ -24,7 +24,7 @@ use Illuminate\Support\Traits\ForwardsCalls;
 use JsonSerializable;
 use LogicException;
 
-abstract class CustomModel extends \Illuminate\Database\Eloquent\Model
+abstract class TestCustomModel extends \Illuminate\Database\Eloquent\Model
 {
     /**
      * A callable to translate the classname to a database table name
